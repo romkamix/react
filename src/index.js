@@ -1,4 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-ReactDOM.render(<h1>Привет, мир!</h1>, document.getElementById("root"));
+import Clock from "./component/clock.js";
+
+ReactDOM.render(<Clock />, document.getElementById("root"));
