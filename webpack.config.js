@@ -1,8 +1,11 @@
+require("dotenv").config();
+
 const path = require("path"),
   webpack = require("webpack"),
   HtmlWebpackPlugin = require("html-webpack-plugin"),
   CopyPlugin = require("copy-webpack-plugin"),
-  { CleanWebpackPlugin } = require("clean-webpack-plugin");
+  { CleanWebpackPlugin } = require("clean-webpack-plugin"),
+  BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -47,6 +50,13 @@ module.exports = {
           },
         },
       ],
+    }),
+    new BrowserSyncPlugin({
+      // browse to http://localhost:3000/ during development,
+      // ./public directory is being served
+      host: process.env.HOST,
+      port: process.env.PORT,
+      server: { baseDir: ["dist"] },
     }),
   ],
 };
