@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+.product {
+  td {
+    padding: 0.5rem;
+  }
+
+  &_outofstock {
+    color: red;
+  }
+}
+
+.product-category {
+  font-weight: bold;
+}

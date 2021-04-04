@@ -21,8 +21,8 @@ module.exports = {
         use: ["babel-loader", "eslint-loader"],
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.(scss|css)$/,
+        use: ["style-loader", "css-loader",'sass-loader'],
       },
     ],
   },
@@ -50,11 +50,10 @@ module.exports = {
       ],
     }),
     new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development,
-      // ./public directory is being served
       host: process.env.HOST,
       port: process.env.PORT,
       server: { baseDir: ["dist"] },
+      open: false,
     }),
   ],
 };

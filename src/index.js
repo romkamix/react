@@ -1,6 +1,14 @@
+import "./scss/index.scss";
+
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Clock from "./component/clock.js";
+import App from "./philosophy";
+// import App from "./vladlen";
 
-ReactDOM.render(<Clock />, document.getElementById("root"));
+ReactDOM.render(
+  <div className="wrapper">
+    <App />
+  </div>,
+  document.getElementById("root")
+);
